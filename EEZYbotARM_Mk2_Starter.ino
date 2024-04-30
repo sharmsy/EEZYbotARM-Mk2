@@ -1,10 +1,17 @@
-/*servo motor driver board control
-   Home Page
+/*
+04.30.2024
+
+Coding & Robotics Class
+Aldersgate Christian Academy
+Mr. Harms
+
+Starter code for operating the EEZYbotARM Mk 2 with a Playstation 2 Controller
+The code below is written for a wired remote. To use a wireless remote, use Ctrl-F to find all values of 128 and replace them with 123. There should be six places where you'll do this
+
 */
+
 #include <PS2X_lib.h>   
 
-
-#include <Wire.h>
 #include <Adafruit_PWMServoDriver.h>
 PS2X ps2x; 
 Adafruit_PWMServoDriver servoboard = Adafruit_PWMServoDriver();
@@ -37,6 +44,7 @@ int boompos = servoMIDboom;
 #define servoMAXclaw 540 //how far the claw closes
 int servoMIDclaw = (servoMAXbase-servoMINbase)/2+servoMINbase;
 int clawpos = servoMIDclaw;
+
 void setup() {
   Serial.begin(57600);
   servoboard.begin();

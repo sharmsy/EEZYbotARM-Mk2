@@ -1,0 +1,92 @@
+// add the following functions to your code
+void moveBase(int b)
+{
+  if(basepos > b)
+  {
+    for(basepos; basepos >= b; basepos=basepos-1)
+    {
+      servoboard.setPWM(0, 0, basepos); //moves the servo on connection 0
+      Serial.println(basepos);
+      delay(ad);
+    }
+  }
+
+  if(basepos < b)
+  {
+    for(basepos; basepos <= b; basepos=basepos+1)
+    {
+      servoboard.setPWM(0, 0, basepos); //moves the servo on connection 0
+      Serial.println(basepos);
+      delay(ad);
+    }
+  }
+} //end of moveBase() function
+
+void moveArm(int a)
+{
+  if(armpos > a)
+  {
+    for(armpos; armpos >= a; armpos=armpos-1)
+    {
+      servoboard.setPWM(1, 0, armpos); //moves the servo on connection 1
+      Serial.println(armpos);
+      delay(ad);
+    }
+  }
+
+  if(armpos < a)
+  {
+    for(armpos; armpos <= a; armpos=armpos+1)
+    {
+      servoboard.setPWM(1, 0, armpos); //moves the servo on connection 1
+      Serial.println(armpos);
+      delay(ad);
+    }
+  }
+} // end of moveArm() function
+
+void moveBoom(int b)
+{
+  if(basepos > b)
+  {
+    for(boompos; boompos >= b; boompos=boompos-1)
+    {
+      servoboard.setPWM(2, 0, boompos); //moves the servo on connection 2
+      Serial.println(boompos);
+      delay(ad);
+    }
+  }
+
+  if(boompos < b)
+  {
+    for(boompos; boompos <= b; boompos=boompos+1)
+    {
+      servoboard.setPWM(2, 0, boompos); //moves the servo on connection 2
+      Serial.println(boompos);
+      delay(ad);
+    }
+  }
+} //end of moveBoom() function
+
+void moveClaw(int c)
+{
+  if(clawpos > c)
+  {
+    for(clawpos; clawpos >= c; clawpos=clawpos-1)
+    {
+      servoboard.setPWM(3, 0, clawpos); //moves the servo on connection 3
+      Serial.println(clawpos);
+      delay(ad);
+    }
+  }
+
+  if(clawpos < c)
+  {
+    for(clawpos; clawpos <= c; clawpos=clawpos+1)
+    {
+      servoboard.setPWM(3, 0, clawpos); //moves the servo on connection 3
+      Serial.println(clawpos);
+      delay(ad);
+    }
+  }
+} //end of moveClaw() function

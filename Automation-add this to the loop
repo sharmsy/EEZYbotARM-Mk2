@@ -1,0 +1,34 @@
+//add the following lines inside the bottom of the loop:
+ if(ps2x.NewButtonState() && ps2x.Button(PSB_GREEN)){
+    Serial.println("Triangle button was just pressed");
+  }
+  if(ps2x.NewButtonState() && ps2x.Button(PSB_PINK)){
+    Serial.println("Pink Square button was just pressed");
+  }
+  if(ps2x.NewButtonState() && ps2x.Button(PSB_BLUE)){
+    Serial.println("Blue cross button was just pressed");
+  }
+  if(ps2x.NewButtonState() && ps2x.Button(PSB_RED)){
+    Serial.println("Circle button was just pressed");
+    moveClaw(102);
+    moveClaw(177);
+    moveBase(90);
+    moveBase(450);
+    moveArm(350);
+    moveArm(470);
+    moveBoom(140);
+    moveBoom(370);
+  }
+
+  if(ps2x.NewButtonState() && ps2x.Button(PSB_SELECT))
+  {
+    Serial.println("You pressed the Select button. Here are your current servo positions:");
+    Serial.print("Base position: ");
+    Serial.println(basepos);
+    Serial.print("Arm position: ");
+    Serial.println(armpos);
+    Serial.print("Boom position: ");
+    Serial.println(boompos);
+    Serial.print("Claw position: ");
+    Serial.println(clawpos);
+  }

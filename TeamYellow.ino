@@ -68,31 +68,31 @@ void setup() {
 void loop() {
   ps2x.read_gamepad(false, vibrate);
 
-  if(ps2x.Analog(PSS_LX) > 123)
+  if(ps2x.Analog(PSS_LX) > 140)
   {
     baseRight();
   }
 
-  if(ps2x.Analog(PSS_LX) < 123)
+  if(ps2x.Analog(PSS_LX) < 110)
   {
     baseLeft();
   }
 
- if(ps2x.Analog(PSS_LY) > 123)
+ if(ps2x.Analog(PSS_LY) > 140)
   {
     boomUp();
   }
 
-  if(ps2x.Analog(PSS_LY) < 123)
+  if(ps2x.Analog(PSS_LY) < 110)
   {
     boomDown();
   }
  
-  if(ps2x.Analog(PSS_RY) > 139)
+  if(ps2x.Analog(PSS_RY) > 140)
   {
     armForward();
   }
-  if(ps2x.Analog(PSS_RY) < 123)
+  if(ps2x.Analog(PSS_RY) < 110)
   {
     armBackward();
   }
@@ -194,4 +194,3 @@ void armForward()
     delay(d);
   }
 }
-

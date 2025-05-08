@@ -85,7 +85,7 @@ int releaseBoom = 324;
   }
   
 void setup() {
-  Serial.begin(57600);
+  Serial.begin(9600);
   pinMode(trigPin, OUTPUT); // Sets pin 3 as an OUTPUT
   pinMode(echoPin, INPUT); // Sets pin 2 as an INPUT
   servoboard.begin();
